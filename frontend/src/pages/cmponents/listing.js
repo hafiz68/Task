@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const Listing = ({ users, setUsers, setSeletedUser }) => {
+const Listing = ({ users, setUsers, setSeletedUser,setDisable }) => {
   const deleteHande = (id) => {
     console.log(id.target.value);
     axios({
@@ -27,6 +27,7 @@ const Listing = ({ users, setUsers, setSeletedUser }) => {
     });
     
     setSeletedUser(Arr[0])
+    setDisable(true)
     window.scrollTo(0, 0);
   };
 

@@ -5,10 +5,12 @@ import Adduser from './pages/cmponents/adUser';
 import Listing from './pages/cmponents/listing';
 import { useEffect, useState } from 'react';
 
-function App(props) {
+function App() {
 
   const [users, setUsers] = useState([])
   const [seletedUser, setSeletedUser] = useState({})
+  const [disable, setDisable] = useState(false);
+
 
   const getUsers = (e) => {
     axios({
@@ -35,8 +37,8 @@ function App(props) {
 
   return (
     <>
-    <Adduser users= {users}  setUsers={setUsers} seletedUser={seletedUser}/>
-    <Listing users= {users}  setUsers={setUsers} setSeletedUser={setSeletedUser}/>
+    <Adduser users= {users} disable={disable } setUsers={setUsers} seletedUser={seletedUser} setDisable={setDisable}/>
+    <Listing users= {users}  setUsers={setUsers} setSeletedUser={setSeletedUser}  disable={disable } setDisable={setDisable}/>
     </>
   );
 }

@@ -3,7 +3,7 @@ import axios from "axios";
 
 import "./addUser.css";
 
-const Adduser = ({ users, setUsers, seletedUser }) => {
+const Adduser = ({ users, setUsers, seletedUser, disable, setDisable }) => {
   const [user, setUser] = useState({
     firstName: "",
     lastName: "",
@@ -13,7 +13,7 @@ const Adduser = ({ users, setUsers, seletedUser }) => {
     gender: "",
   });
 
-  const [disable, setDisable] = useState(false);
+  // const [disable, setDisable] = useState(false);
 
   const hanleValue = (e) => {
     const { name, value } = e.target;
@@ -167,7 +167,7 @@ const Adduser = ({ users, setUsers, seletedUser }) => {
             <option>Female</option>
           </select>
         </label>
-        {!disable  ? (
+        {!disable ? (
           <button className="btn" type="button" onClick={hanleBtn}>
             Add
           </button>
