@@ -98,7 +98,6 @@ const Adduser = ({ users, setUsers, seletedUser }) => {
 
   useEffect(() => {
     setUser(seletedUser);
-    setDisable(true);
   }, [seletedUser]);
 
   return (
@@ -168,7 +167,7 @@ const Adduser = ({ users, setUsers, seletedUser }) => {
             <option>Female</option>
           </select>
         </label>
-        {!disable ? (
+        {!disable  ? (
           <button className="btn" type="button" onClick={hanleBtn}>
             Add
           </button>
